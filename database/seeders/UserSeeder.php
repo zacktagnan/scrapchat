@@ -48,13 +48,16 @@ class UserSeeder extends Seeder
         // }
         // ... a través de
         foreach ($this->usersDefault as $row) {
-            User::factory()->withPersonalTeam()->create([
-                'name' => $row['name'],
-                'email' => $row['email'],
-                'email_verified_at' => $row['email_verified_at'],
-                'password' => $row['password'],
-                'remember_token' => $row['remember_token'],
-            ]);
+            User::factory()
+                ->withPersonalTeam()
+                ->hasChatbots(rand(1, 4))
+                ->create([
+                    'name' => $row['name'],
+                    'email' => $row['email'],
+                    'email_verified_at' => $row['email_verified_at'],
+                    'password' => $row['password'],
+                    'remember_token' => $row['remember_token'],
+                ]);
         }
 
         // Datos de relleno ficticios...
