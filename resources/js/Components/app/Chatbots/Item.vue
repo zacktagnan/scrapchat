@@ -3,10 +3,9 @@ import PrimaryButton from '@/Components/PrimaryButton.vue'
 import SecondaryButton from '@/Components/SecondaryButton.vue'
 import DangerButton from '@/Components/DangerButton.vue'
 import { usePage } from '@inertiajs/vue3'
+import { dayjsWithLocale } from '@/Utils/dayjs'
 
 const appLocale = usePage().props.appLocale
-
-import { dayjsWithLocale } from '@/Utils/dayjs'
 const dayjs = dayjsWithLocale(appLocale)
 
 defineProps({
@@ -26,7 +25,7 @@ defineProps({
             </div>
 
             <div class="flex space-x-2 mt-3 md:mt-0">
-                <PrimaryButton>Ver</PrimaryButton>
+                <PrimaryButton class="text-cyan-400" :href="route('chatbots.index')" :aria-label="'Ver Chatbot'">Ver</PrimaryButton>
                 <SecondaryButton>Editar</SecondaryButton>
                 <DangerButton>Eliminar</DangerButton>
             </div>
