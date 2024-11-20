@@ -29,6 +29,7 @@ const props = defineProps({
 
 const mergeClasses = computed(() => {
     return twMerge(
+        'space-x-1',
         props.defaultClasses,
         props.class
     )
