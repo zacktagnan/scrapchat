@@ -25,9 +25,15 @@ defineProps({
             </div>
 
             <div class="flex space-x-2 mt-3 md:mt-0">
-                <PrimaryButton class="text-cyan-400" :href="route('chatbots.index')" :aria-label="'Ver Chatbot'">Ver</PrimaryButton>
-                <SecondaryButton>Editar</SecondaryButton>
-                <DangerButton>Eliminar</DangerButton>
+                <PrimaryButton class="text-cyan-400 dark:text-cyan-800" :href="route('chatbots.index')" :aria-label="'Ver Chatbot'">
+                    Ver
+                </PrimaryButton>
+                <SecondaryButton :href="route('chatbots.index')" aria-label="'Editar'">
+                    Editar
+                </SecondaryButton>
+                <DangerButton aria-label="'Eliminar'">
+                    Eliminar
+                </DangerButton>
             </div>
         </div>
     </section>
