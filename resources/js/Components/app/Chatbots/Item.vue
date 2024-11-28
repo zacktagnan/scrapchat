@@ -31,7 +31,7 @@ defineProps({
                     <EyeIcon class="size-4" />
                     <span>Ver</span>
                 </PrimaryButton>
-                <SecondaryButton :href="route('chatbots.index')" aria-label="'Editar'">
+                <SecondaryButton :href="route('chatbots.edit', chatbot.id)" aria-label="'Editar'">
                     <PencilIcon class="size-4" />
                     <span>Editar</span>
                 </SecondaryButton>
