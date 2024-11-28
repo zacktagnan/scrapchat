@@ -1,14 +1,9 @@
 <script setup>
 import PrimaryButton from '@/Components/PrimaryButton.vue'
-import SecondaryButton from '@/Components/SecondaryButton.vue'
-import { ArrowUturnLeftIcon, PencilIcon, ChatBubbleBottomCenterIcon } from '@heroicons/vue/24/outline'
-import { Link, usePage } from '@inertiajs/vue3'
-import { dayjsWithLocale } from '@/Utils/dayjs'
+import { ArrowUturnLeftIcon } from '@heroicons/vue/24/outline'
+import { Link } from '@inertiajs/vue3'
 import FormSection from '@/Components/FormSection.vue'
 import ActionMessage from '@/Components/ActionMessage.vue'
-
-const appLocale = usePage().props.appLocale
-const dayjs = dayjsWithLocale(appLocale)
 
 defineProps({
     chatbot: {
