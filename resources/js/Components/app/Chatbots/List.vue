@@ -10,9 +10,9 @@ defineProps({
 </script>
 
 <template>
-    <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 leading-tight ml-2">
+    <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 leading-tight ml-4">
         {{ $t('app.chatbots.list.subsection_name') }}
-    </h3>
+    </h2>
 
     <div class="divide-y bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg mt-4">
         <template v-if="chatbots.length">

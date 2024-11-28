@@ -43,7 +43,9 @@ class ChatbotController extends Controller
      */
     public function show(Chatbot $chatbot)
     {
-        //
+        return Inertia::render('Chatbots/Show', [
+            'chatbot' => $chatbot,
+        ]);
     }
 
     /**

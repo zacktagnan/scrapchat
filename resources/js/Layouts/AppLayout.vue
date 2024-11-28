@@ -51,7 +51,7 @@ const logout = () => {
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')" :title="$t('Dashboard')">
                                     {{ $t('Dashboard') }}
                                 </NavLink>
-                                <NavLink :href="route('chatbots.index')" :active="route().current('chatbots.index')" :title="$t('Chatbots')">
+                                <NavLink :href="route('chatbots.index')" :active="route().current('chatbots.*')" :title="$t('Chatbots')">
                                     {{ $t('Chatbots') }}
                                 </NavLink>
                             </div>

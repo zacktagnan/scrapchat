@@ -22,12 +22,12 @@ defineProps({
     <section class="border-gray-200 p-5 dark:border-gray-700" :aria-label="chatbot.name">
         <div class="flex flex-col md:flex-row md:justify-between md:items-center">
             <div>
-                <div class="text-gray-800 dark:text-gray-200">{{ chatbot.name }} [{{ appLocale }}]</div>
+                <div class="text-gray-800 dark:text-gray-200">{{ chatbot.name }}</div>
                 <div class="text-sm text-gray-500 dark:text-gray-400">{{ dayjs(chatbot.created_at).fromNow() }}</div>
             </div>
 
             <div class="flex space-x-2 mt-3 md:mt-0">
-                <PrimaryButton class="text-cyan-400 dark:text-cyan-800" :href="route('chatbots.index')" :aria-label="'Ver Chatbot'">
+                <PrimaryButton class="text-cyan-400 dark:text-cyan-800" :href="route('chatbots.show', chatbot.id)" :aria-label="'Ver Chatbot'">
                     <EyeIcon class="size-4" />
                     <span>Ver</span>
                 </PrimaryButton>
