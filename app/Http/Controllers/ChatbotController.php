@@ -62,7 +62,9 @@ class ChatbotController extends Controller
      */
     public function update(SaveChatbotRequest $request, Chatbot $chatbot)
     {
-        //
+        $chatbot->update($request->validated());
+
+        return back();
     }
 
     /**

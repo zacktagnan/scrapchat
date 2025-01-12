@@ -13,6 +13,13 @@ class Chatbot extends Model
     use HasFactory;
     use HasUuids;
 
+    protected $fillable = [
+        'name',
+        'system_prompt',
+        'model',
+        'temperature',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

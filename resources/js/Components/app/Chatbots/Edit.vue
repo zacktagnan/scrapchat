@@ -22,7 +22,9 @@ const form = useForm({
 
 const handleSubmit = () => {
     // console.log('FORM_DATA', form.data())
-    form.put(route('chatbots.update', props.chatbot.id))
+    form.put(route('chatbots.update', props.chatbot.id), {
+        preserveScroll: true,
+    })
 }
 </script>
 
@@ -31,27 +33,22 @@ const handleSubmit = () => {
         <template #title>{{ $t('app.chatbots.actions.edit.header.title') }}</template>
         <template #description>{{ $t('app.chatbots.actions.edit.header.description') }}</template>
         <template v-slot:backTo>
-            <Link
-                :href="route('chatbots.index')"
+            <Link :href="route('chatbots.index')"
                 class="flex items-center space-x-2 mr-4 md:ml-4 text-sm text-gray-600 hover:underline dark:text-gray-400"
-                :aria-label="$t('app.chatbots.actions.back_to_list')"
-            >
-                <ArrowUturnLeftIcon class="size-4" />
-                <span>{{ $t('app.chatbots.actions.back_to_list') }}</span>
+                :aria-label="$t('app.chatbots.actions.back_to_list')">
+            <ArrowUturnLeftIcon class="size-4" />
+            <span>{{ $t('app.chatbots.actions.back_to_list') }}</span>
             </Link>
         </template>
         <template #form>
             <Form :form="form" />
         </template>
         <template #actions>
-            <ActionMessage :on="false" class="me-3">{{ $t('app.chatbots.actions.edit.actions.updated') }}</ActionMessage>
-            <PrimaryButton
-                :aria-label="$t('app.chatbots.actions.edit.actions.save_changes')"
-                :class="{
-                    'cursor-not-allowed opacity-50': false
-                }"
-                :disabled="false"
-            >
+            <ActionMessage :on="form.recentlySuccessful" class="me-3">{{ $t('app.chatbots.actions.edit.actions.updated')
+                }}</ActionMessage>
+            <PrimaryButton :aria-label="$t('app.chatbots.actions.edit.actions.save_changes')" :class="{
+                'cursor-not-allowed opacity-50': form.processing
+            }" :disabled="form.processing">
                 {{ $t('app.chatbots.actions.edit.actions.save_changes') }}
             </PrimaryButton>
         </template>
