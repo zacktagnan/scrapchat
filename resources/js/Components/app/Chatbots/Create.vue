@@ -1,9 +1,10 @@
 <script setup>
 import PrimaryButton from '@/Components/PrimaryButton.vue'
 import { ArrowUturnLeftIcon } from '@heroicons/vue/24/outline'
-import { Link, useForm } from '@inertiajs/vue3'
+import { Link } from '@inertiajs/vue3'
 import FormSection from '@/Components/FormSection.vue'
 import Form from '@/Components/app/Chatbots/Form.vue'
+import { chatbotForm, store } from '@/Forms/chatbot'
 
 const props = defineProps({
     chatbot: {
@@ -12,18 +13,10 @@ const props = defineProps({
     },
 })
 
-const form = useForm({
-    name: props.chatbot.name,
-    system_prompt: props.chatbot.system_prompt,
-    model: props.chatbot.model,
-    temperature: String(props.chatbot.temperature),
-})
+const form = chatbotForm(props.chatbot)
 
 const handleSubmit = () => {
-    // console.log('FORM_DATA', form.data())
-    form.post(route('chatbots.store'), {
-        preserveScroll: true,
-    })
+    store(form)
 }
 </script>
 

@@ -12,8 +12,8 @@ defineProps({
 </script>
 
 <template>
-    <div class="flex justify-between items-center">
-        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 leading-tight ml-4">
+    <div class="flex justify-between items-center mx-4">
+        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 leading-tight">
             {{ $t('app.chatbots.list.subsection_name') }}
         </h2>
 
