@@ -9,6 +9,18 @@ return [
         'header' => 'Detail',
     ],
 
+    'create' => [
+        'title' => 'Creating Chatbot',
+        'aria_label' => 'Chatbot to Create',
+        'header' => [
+            'title' => 'Create',
+            'description' => 'Create a new register.',
+        ],
+        'actions' => [
+            'save_changes' => 'Create',
+        ],
+    ],
+
     'edit' => [
         'title' => 'Editing',
         'aria_label' => 'Chatbot to Edit',

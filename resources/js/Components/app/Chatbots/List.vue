@@ -1,5 +1,7 @@
 <script setup>
 import ChatbotsItem from '@/Components/app/Chatbots/Item.vue'
+import PrimaryButton from '@/Components/PrimaryButton.vue'
+import { PlusIcon } from '@heroicons/vue/24/outline'
 
 defineProps({
     chatbots: {
@@ -10,9 +12,16 @@ defineProps({
 </script>
 
 <template>
-    <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 leading-tight ml-4">
-        {{ $t('app.chatbots.list.subsection_name') }}
-    </h2>
+    <div class="flex justify-between items-center">
+        <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100 leading-tight ml-4">
+            {{ $t('app.chatbots.list.subsection_name') }}
+        </h2>
+
+        <PrimaryButton :aria-label="$t('app.chatbots.index.create.label')" :href="route('chatbots.create')">
+            <PlusIcon class="size-4" />
+            <span>{{ $t('app.chatbots.index.create.btn') }}</span>
+        </PrimaryButton>
+    </div>
 
     <div class="divide-y bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg mt-4">
         <template v-if="chatbots.length">

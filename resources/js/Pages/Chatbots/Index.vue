@@ -18,7 +18,8 @@ const props = defineProps({
             </h1>
         </template>
 
-        <section class="py-12" :aria-label="$t('app.chatbots.index.section_name') + ' - ' + $t('app.chatbots.list.subsection_name')">
+        <section class="py-12"
+            :aria-label="$t('app.chatbots.index.section_name') + ' - ' + $t('app.chatbots.list.subsection_name')">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <ChatbotsList :chatbots="chatbots" />
             </div>
