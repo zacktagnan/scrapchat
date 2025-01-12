@@ -14,7 +14,7 @@ class ChatbotController extends Controller
      */
     public function index(Request $request)
     {
-        $chatbots = $request->user()->chatbots;
+        $chatbots = $request->user()->chatbots()->orderBy('created_at', 'desc')->get();
 
         return Inertia::render('Chatbots/Index', [
             'chatbots' => $chatbots,
