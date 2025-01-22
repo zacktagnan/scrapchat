@@ -1,6 +1,8 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue'
 import ChatbotsDetail from '@/Components/app/Chatbots/Detail.vue'
+import KnowledgeSourcesModal from '@/Components/app/KnowledgeSources/Modal.vue'
+import { ref } from 'vue'
 
 const props = defineProps({
     chatbot: {
@@ -8,6 +10,16 @@ const props = defineProps({
         required: true,
     }
 })
+
+const showModal = ref(false)
+
+const openKnowledgeModal = () => {
+    showModal.value = true
+}
+
+const closeKnowledgeModal = () => {
+    showModal.value = false
+}
 </script>
 
 <template>
@@ -20,8 +32,10 @@ const props = defineProps({
 
         <section class="py-12" :aria-label="`Chatbot ${chatbot.name}`">
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <ChatbotsDetail :chatbot="chatbot" />
+                <ChatbotsDetail :chatbot="chatbot" @call-open-knowledge-modal="openKnowledgeModal" />
             </div>
+
+            <KnowledgeSourcesModal :show="showModal" @call-close-knowledge-modal="closeKnowledgeModal" />
         </section>
     </AppLayout>
 </template>
